@@ -5,6 +5,13 @@ module.exports = {
     entry: path.resolve('src/index.js'),
     output: {
         path: path.resolve('public'),   // 서비스 루트 경로 지정?
-        filename: 'assets/js/bundle.js'
+        filename: 'main .js'
+    },
+    devServer: {
+        host: '0.0.0.0',
+        port: 9090,
+        liveReload: true,
+        hot: false,
+        compress: true
     }
 }
