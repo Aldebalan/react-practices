@@ -9,7 +9,7 @@ ex02: Component Styling
     - [ex03]$ npm run debug src=03 {css-modules=true}
 4) CSS Module II
     - css-loader options: {module: true}
-    - [ex04]$ npm run debug src=03 {css-modules=true}
+    - [ex04]$ npm run debug src=04 {css-modules=true}
 5) 
 6) 
 7) 
