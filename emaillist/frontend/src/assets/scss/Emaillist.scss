@@ -1,4 +1,13 @@
-.Email {
+:globla(#App) {
+    .Emaillist {
+        width: 100%;
+        padding-top: 10px;
+        border-top: 2px solid #c9c9c9;
+    }
+}
+
+//
+.Emaillist li {
     position: relative;
     background: #fff;
     width: 298px;
@@ -9,16 +18,16 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
-.Email h4 {
+.Emaillist li h4 {
     padding: 5px 0;
 }
 
-.Email span {
+.Emaillist li span {
     display: block;
     padding: 0 0 5px 0;
 }
 
-.Email a {
+.Emaillist li a {
     position: absolute;
     width: 10px;
     border: 1px solid #e5e5e5;
@@ -33,10 +42,10 @@
     padding-top: 2px;
 }
 
-.Email a:before {
+.Emaillist li a:before {
     content:'X'
 }
-.Email a:hover, a:visited, a:active {
+.Emaillist li a:hover, a:visited, a:active {
     text-decoration: none;
     color: #fff;
 }
