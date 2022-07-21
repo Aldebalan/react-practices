@@ -13,7 +13,8 @@ export default function Form() {
 
     const onChangeEmailInput = e => {
         setEmail(e.target.value);
-        // exit api
+        // check email format(account@mysite.com)
+        
     }
 
     return (
