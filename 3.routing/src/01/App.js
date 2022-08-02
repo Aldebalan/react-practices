@@ -26,7 +26,7 @@ export default function App() {
                     return <Main />;
                 case '/guestbook' :
                     return <Guestbook />
-                case '/gallary' :
+                case '/gallery' :
                     return <Gallery />
                 default :
                     return null

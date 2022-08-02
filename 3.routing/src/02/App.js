@@ -13,33 +13,42 @@ export default function App() {
         console.log(url);
 
         window.history.pushState({page: url}, e.target.text, url);
-
+        setRoute({page: url});
     }
 
-    const router = function () {
-        let component = null;
-        switch (route.page) {
-            case '/':
-                component = <Main/>;
-                break;
-            case '/gallery':
-                component = <Gallery/>;
-                break;
-            case '/guestbook':
-                component = <Guestbook/>;
-                break;
+    useEffect(() => {
+        const handlePopState = (e) => setRoute(e.state);
+        
+        window.addEventListener("popstate", handlePopState);
+
+        return () => {
+            window.removeEventListener("popstate", handlePopState);
         }
-        return component;
-    };
+    }, []);
 
     return (
-        { router() };
         <div>
-            <ul>
-                <li><a href={'/'} onClick={handleLinkClick}>[Main]</a></li>
-                <li><a href={'/gallery'} onClick={handleLinkClick}>[Gallery]</a></li>
-                <li><a href={'/guestbook'} onClick={handleLinkClick}>[Guestbook]</a></li>
-            </ul>
+        {
+            (() => {
+                switch (route.page) {
+                    case '/':
+                        return <Main/>;
+                    case '/gallery':
+                        return <Gallery/>;
+                    case '/guestbook':
+                        return <Guestbook/>;
+                    default :
+                        return null;    
+                }
+            })()
+        }
+            <div>
+                <ul>
+                    <li><a href={'/'} onClick={handleLinkClick}>[Main]</a></li>
+                    <li><a href={'/gallery'} onClick={handleLinkClick}>[Gallery]</a></li>
+                    <li><a href={'/guestbook'} onClick={handleLinkClick}>[Guestbook]</a></li>
+                </ul>
+            </div>
         </div>
     )
 }
