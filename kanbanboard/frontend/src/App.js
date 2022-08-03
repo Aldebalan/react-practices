@@ -5,9 +5,9 @@ import './assets/css/App.css';
 const App = () => {
   return (
     <div id={'App'}>
-      <KanbanBoard/>
+      <KanbanBoard />
     </div>
   )
 }
 
-export default App
+export default App;
